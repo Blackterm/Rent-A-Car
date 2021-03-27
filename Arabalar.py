@@ -24,7 +24,7 @@ class Data():
         self.baglanti.commit()
 
     def yeni_araba(self, araba):
-        self.cursor.execute("Insert into Sistem Values(?,?,?,?,?,?,?)",
+        self.cursor.execute("Insert into Arabalar Values(?,?,?,?,?,?,?)",
                             (araba.model, araba.renk,araba.kilometre, araba.plaka, araba.ucret,araba.kullanim_yasi,araba.kullanim_gun))
         self.baglanti.commit()
 
@@ -48,3 +48,14 @@ class Data():
         for i in uye:
             print("Model:{}\nRenk:{}\nKilometre:{}\nPlaka:{}\nÜcret:{}\nKullanım Yaşı:{}".format(i[0],i[1],i[2],i[3],i[4],i[5]))
             print("*********************")
+
+
+
+    def arabalar(self):
+        araba1 = Araba("Merdeces","Beyaz",0,"38CAN001",1000,10,3652)
+        araba2 = Araba("Renault","Siyah",0,"38CAN002",750,5,1826)
+        araba3 = Araba("Hyundai","Kırmızı",0,"38CAN003",500,1,365)
+
+        Data().yeni_araba(araba1)
+        Data().yeni_araba(araba2)
+        Data().yeni_araba(araba3)

@@ -21,6 +21,8 @@ class KOD():
     def indirim_kod_sorgu(self,Kod):
         self.cursor.execute("Select * From Kod where KOD = ? ", (Kod,))
         user = self.cursor.fetchone()
+        if user == None:
+            return 3
         if user[1] == 0:
             return 1
         elif user[1] == 1:

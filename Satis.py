@@ -14,6 +14,7 @@ locale.setlocale(locale.LC_ALL, '')
 
 
 def Satis (kullanici_adi):
+    Arabalar.Data().arabalar()
     kod = Rastgele_kod.Rastgele().random_char()
     user = Kullanici.Data().kullanici_cekme(kullanici_adi)
     bu_gun = datetime.datetime.strftime(an, '%d %m %Y')
@@ -58,7 +59,7 @@ def Satis (kullanici_adi):
                 if kod_sorgu == 2:
                     print("Bu kod zaten kullanılmış.")
 
-                elif kod_sorgu == None :
+                elif kod_sorgu == 3 :
                     print("Lütfen geçerli bir kod giriniz.")
 
                 elif kod_sorgu == 1:
